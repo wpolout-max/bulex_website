@@ -1,0 +1,30 @@
+{
+  "developer": {
+    "name": "Bulex",
+    "tagline": "Android apps by Bulex. Free to download.",
+    "email": "wpolout@gmail.com"
+  },
+  "apps": [
+    {
+      "id": "sample-app",
+      "name": "Sample App",
+      "tagline": "Replace this entry with your first app.",
+      "description": "Describe what your app does in two or three sentences. List the main features so visitors know what they get.",
+      "icon": "assets/icons/sample.svg",
+      "category": "Tools",
+      "version": "1.0.0",
+      "size": "5 MB",
+      "minAndroid": "8.0",
+      "updated": "2026-10-03",
+      "apk": "https://github.com/wpolout-max/bulex_website/releases/download/sample-app-v1.0.0/sample-app.apk",
+      "sha256": "",
+      "screenshots": [
+        "assets/screens/sample-1.svg",
+        "assets/screens/sample-2.svg"
+      ],
+      "changelog": [
+        "First release"
+      ]
+    }
+  ]
+}
