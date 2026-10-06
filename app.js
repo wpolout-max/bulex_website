@@ -30,7 +30,7 @@
       return !q || (a.name + ' ' + (a.tagline || '') + ' ' + (a.category || '')).toLowerCase().indexOf(q) !== -1;
     });
     view.replaceChildren(
-      el('h1', { text: data.developer.name || 'Apps' }),
+      el('h1', { text: 'Apps' }),
       el('p', { class: 'muted', text: data.developer.tagline || '' }),
       apps.length
         ? el('div', { class: 'grid' }, apps.map(card))
@@ -45,7 +45,7 @@
   function renderApp(id) {
     var a = data.apps.filter(function (x) { return x.id === id; })[0];
     if (!a) { view.replaceChildren(el('p', { text: 'App not found.' }), el('a', { href: '#/', text: 'Back to all apps' })); return; }
-    document.title = a.name + ' | Bulex Apps';
+    document.title = a.name;
 
     var nodes = [
       el('a', { class: 'back', href: '#/', text: '← All apps' }),
@@ -81,7 +81,7 @@
   }
 
   function route() {
-    document.title = 'Bulex Apps';
+    document.title = 'Apps';
     var m = location.hash.match(/^#\/app\/(.+)$/);
     window.scrollTo(0, 0);
     if (m) renderApp(decodeURIComponent(m[1])); else renderList();
@@ -98,8 +98,10 @@
     .then(function (d) {
       data = d;
       var dev = d.developer || {};
-      document.getElementById('brand').textContent = (dev.name || 'Bulex') + ' Apps';
-      document.getElementById('foot-text').textContent = dev.email ? 'Contact: ' + dev.email : '';
+      document.getElementById('foot-text').textContent = [
+        dev.name ? 'Published by ' + dev.name : '',
+        dev.email ? 'Contact: ' + dev.email : ''
+      ].filter(Boolean).join(' · ');
       route();
     })
     .catch(function () {
