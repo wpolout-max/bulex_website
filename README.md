@@ -1,6 +1,6 @@
-# Bulex Apps
+# Apps
 
-Personal site to host Android APK downloads. Static files only.
+Site to host Android APK downloads published by BulTek Enterprise Ltd. Static files only.
 
 ## Add an app
 
